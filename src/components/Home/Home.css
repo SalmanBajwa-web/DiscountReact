@@ -1,0 +1,35 @@
+.home .btnBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.home .cardBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+.home .card {
+    width:350px;
+    height: 230px;
+    /* display: none; */
+    flex-grow: 0;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+.home .card .imgBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home .card .imgBox img{
+    width:60px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0px 5px;
+}
+.home .card .imgBox span{
+    font-weight: bold;
+}

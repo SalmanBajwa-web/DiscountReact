@@ -1,0 +1,432 @@
+[
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f5ed1dfaf1646f7547a2a1",
+        "type": "Fixed",
+        "name": "Download the app",
+        "description": "When user download app ",
+        "value": 1,
+        "repeat": 1,
+        "validity": "2023-03-01T00:00:00.000Z",
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f5ed1dfaf1646f7547a2a2"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T10:23:25.667Z",
+        "updatedAt": "2023-02-22T14:40:30.496Z",
+        "offerType": "App_Review_Registration"
+    },
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f5ed72faf1646f7547a2a4",
+        "type": "Fixed",
+        "name": "Leave a review",
+        "description": "When user Leave a review ",
+        "value": 1,
+        "repeat": 1,
+        "validity": "2023-03-01T00:00:00.000Z",
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f5ed72faf1646f7547a2a5"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T10:24:50.908Z",
+        "updatedAt": "2023-02-22T14:41:37.284Z",
+        "offerType": "App_Review_Registration"
+    },
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f5ee26faf1646f7547a2aa",
+        "type": "Fixed",
+        "name": "Book lunch/dinner",
+        "description": "When user Book lunch/dinner  ",
+        "value": 1,
+        "repeat": 1,
+        "validity": "2023-03-01T00:00:00.000Z",
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f5ee26faf1646f7547a2ab"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T10:27:50.119Z",
+        "updatedAt": "2023-02-22T14:42:13.509Z",
+        "offerType": "Book_Lunch_Dinner"
+    },
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f5ee52faf1646f7547a2ad",
+        "type": "Fixed",
+        "name": "Order from the site/App",
+        "description": "When user Order from the site/App  ",
+        "value": 1,
+        "repeat": 1,
+        "validity": "2023-03-01T00:00:00.000Z",
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f5ee52faf1646f7547a2ae"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T10:28:34.761Z",
+        "updatedAt": "2023-02-22T14:47:00.759Z",
+        "offerType": "Book_Lunch_Dinner"
+    },
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f5eeccfaf1646f7547a2b0",
+        "type": "Fixed",
+        "name": "Bundle",
+        "description": "When user buy Bundle  ",
+        "value": 1,
+        "repeat": 1,
+        "validity": null,
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f5eeccfaf1646f7547a2b1"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T10:30:36.100Z",
+        "updatedAt": "2023-02-22T14:47:29.380Z",
+        "offerType": "Bundle"
+    },
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f5eef9faf1646f7547a2b3",
+        "type": "Fixed",
+        "name": " Free shipping",
+        "description": "When you want to give user  Free shipping",
+        "value": 1,
+        "repeat": 1,
+        "validity": null,
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f5eef9faf1646f7547a2b4"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T10:31:21.473Z",
+        "updatedAt": "2023-02-22T14:48:31.149Z",
+        "offerType": "Free_Shipping"
+    },
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f5efcdfaf1646f7547a2b6",
+        "type": "Fixed",
+        "name": " Flat ",
+        "description": "Give flat discount",
+        "value": 1,
+        "repeat": 1,
+        "validity": null,
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f5efcdfaf1646f7547a2b7"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T10:34:53.209Z",
+        "updatedAt": "2023-02-22T14:49:44.020Z",
+        "offerType": "Flat"
+    },
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f5f070faf1646f7547a2b9",
+        "type": "Fixed",
+        "name": "Menus for special occasions",
+        "description": "Create Menus for special occasions",
+        "value": 1,
+        "repeat": 1,
+        "validity": null,
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f5f070faf1646f7547a2ba"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T10:37:36.152Z",
+        "updatedAt": "2023-02-22T14:50:02.920Z",
+        "offerType": "Menu_For_Special_Occasons"
+    },
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f5f0d2faf1646f7547a2bc",
+        "type": "Fixed",
+        "name": "Set Menu",
+        "description": "In Set Menu create a selection of pruducts",
+        "value": 1,
+        "repeat": 1,
+        "validity": null,
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f5f0d2faf1646f7547a2bd"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T10:39:14.839Z",
+        "updatedAt": "2023-02-22T14:51:20.440Z",
+        "offerType": "Set_Menu"
+    },
+    {
+        "available": {
+            "delivery": null,
+            "reservation": null
+        },
+        "days": {
+            "all": null,
+            "sunday": null,
+            "monday": null,
+            "tuesday": null,
+            "wednesday": null,
+            "thursday": null,
+            "friday": null,
+            "saturday": null
+        },
+        "startDate": null,
+        "endDate": null,
+        "fixedPrice": null,
+        "spentMoney": null,
+        "_id": "63f60c23faf1646f7547a341",
+        "type": "Fixed",
+        "name": "Registration ",
+        "description": "When user Register himself",
+        "value": 1,
+        "repeat": 1,
+        "validity": null,
+        "code": "",
+        "bundle": [
+            {
+                "product": [],
+                "quantity": 0,
+                "_id": "63f60c23faf1646f7547a342"
+            }
+        ],
+        "freeProduct": [],
+        "threshold": null,
+        "freeShippingThreshold": null,
+        "occasion": null,
+        "draft": true,
+        "createdAt": "2023-02-22T12:35:47.385Z",
+        "updatedAt": "2023-02-22T14:51:48.247Z",
+        "offerType": "App_Review_Registration"
+    }
+]

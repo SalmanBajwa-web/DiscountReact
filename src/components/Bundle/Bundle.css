@@ -1,0 +1,83 @@
+.appReviewRegistration .form1 {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow-y: scroll;
+}
+.appReviewRegistration .form1 .innerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 1200px;
+
+}
+.appReviewRegistration .form1 .cardBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.appReviewRegistration .form1 .cardBox .card{
+    min-width: 200px;
+}
+.appReviewRegistration .form1 .cardBox img{
+  width:100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.appReviewRegistration .form1  .firstProductBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:200px;
+    height: 200px;
+    border:1px solid #999;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    cursor: pointer;
+}
+.appReviewRegistration .form1  .secondProductBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:200px;
+    height: 200px;
+    border:1px solid #999;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    cursor: pointer;
+}
+.appReviewRegistration .form1  .secondProductBox:hover,.appReviewRegistration .form1  .firstProductBox:hover{
+    border:2px solid blue;
+}
+.appReviewRegistration .form1  .active{
+    border:2px solid blue;
+}
+.appReviewRegistration .form1  .badge{
+    margin-left: 3rem;
+
+}
+
+.appReviewRegistration .form1  select{
+    margin-left: 3rem;
+    margin-top: 1rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+

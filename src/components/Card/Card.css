@@ -1,0 +1,49 @@
+.createDiscount .card{
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+    overflow: hidden;
+    min-width: 350px;
+    margin-right: 1rem;
+}
+
+.createDiscount .card a{
+    text-decoration: none;
+}
+.createDiscount .card .card-title{
+    color:var(--t1);
+}
+.createDiscount .card .card-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:var(--t2);
+}
+.createDiscount .card .card-text .badge{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid var(--c3)
+}
+.createDiscount .card  .badge{
+    font-size: 0.9rem;
+}
+.createDiscount .card .card-text .badge svg{
+    margin-right: 0.5rem;
+}
+.createDiscount .card .card-footer{
+    background: var(--c1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createDiscount .card .card-footer .badge{
+    background: var(--c1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid var(--c3);
+    margin-left: 1rem;
+}
+.createDiscount .card .card-footer .badge:nth-child(1) svg{
+    margin-right: 0.5rem;
+}

@@ -1,0 +1,230 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useGlobalContext } from '../hook/Context';
+import OfferBox from '../OfferBox/OfferBox';
+import './FreeShipping.css'
+import { FaPlus } from 'react-icons/fa';
+
+const offerBoxArray = ["Bundle plus free product", "Complimentary product with threshold", "Fixed discount with threshold"];
+
+const FreeShipping = () => {
+    const { activeObject, setActiveObject } = useGlobalContext();
+
+    const [offerTypeChoice, setOfferTypeChoice] = useState(offerBoxArray[0]);
+    const [showForm, setShowForm] = useState(true);
+    const [showOfferBox, setShowOfferBox] = useState(true);
+
+    return (
+        <div className='appReviewRegistration'>
+            <h1>AppReviewRegistration</h1>
+            {showOfferBox && (
+                <OfferBox array={offerBoxArray} activeObject={activeObject} setActiveObject={setActiveObject} offerTypeChoice={offerTypeChoice} setOfferTypeChoice={setOfferTypeChoice} setShowForm={setShowForm} setShowOfferBox={setShowOfferBox} />
+            )}
+
+            {showForm && (
+                <>
+                   <Form3 />
+                </>
+            )}
+
+        </div>
+    )
+}
+
+export default FreeShipping
+
+
+
+
+
+
+const Form3 = () => {
+    const { fakeData, activeObject } = useGlobalContext();
+
+    const [firstProduct, setFirstProduct] = useState({ product: null, count: 0 });
+    const [secondProduct, setSecondProduct] = useState({ product: null, count: 0 });
+    const [firstActive, setFirstActive] = useState(true);
+    const [freeProduct, setFreeProduct] = useState('Desert');
+
+    const [name, setName] = useState('');
+    const [perPerson, setPerPerson] = useState(1);
+    const [avaiableFor, setAvaiableFor] = useState({ delivery: false, Reservation: false });
+    const [detail, setDetail] = useState('');
+    const [startDate, setStartDate] = useState(Date.now());
+    const [endDate, setEndDate] = useState(Date.now());
+    const [days, setDays] = useState({ all: false, sunday: false, monday: false, tuesday: false, wednesday: false, thursday: false, friday: false, saturday: false })
+    // const [threshold, setThreshold] = useState(0);
+    // const [fixedPrice, setFixedPrice] = useState(0);
+    const [spentMoney, setSpentMoney] = useState(0);
+
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+    const [newList, setNewList] = useState({});
+    let draft = false;
+
+    const createDiscount = () => {
+        const newObjct = JSON.parse(JSON.stringify(activeObject));
+        // newObjct.bundle = [
+        //     { product: firstProduct.product, quantity: firstProduct.count },
+        //     { product: secondProduct.product, quantity: secondProduct.count },
+        // ]
+        // newObjct.freeProduct = [firstProduct.product.name];
+        newObjct.name = name;
+        newObjct.repeat = perPerson;
+        newObjct.available = avaiableFor;
+        newObjct.description = detail;
+        newObjct.startDate = startDate;
+        newObjct.endDate = endDate;
+        newObjct.days = days;
+        newObjct.spentMoney = spentMoney;
+        newObjct.draft = draft;
+        console.log("newObjct :", newObjct)
+        setLoading(true);
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        delete newObjct._id;
+        const raw = JSON.stringify(newObjct);
+        fetch(`http://localhost:4000/discounts`, { method: 'POST', body: raw, headers: myHeaders })
+            .then(item => item.json())
+            .then(item => {
+                if (item.status === 'fail') throw new Error(item.message);
+                setLoading(false);
+                setNewList(item);
+                console.log("Created Object,", item)
+            })
+            .catch(err => {
+                setError(true);
+                setLoading(false);
+            })
+
+    }
+
+    const createDraft = () => {
+        draft = true;
+        createDiscount();
+    }
+
+    return (
+        <div className='form1'>
+            <div className="innerForm">
+                <div className="container">
+                
+                </div>
+
+                <div className="container">
+
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Name</label>
+                        <input type="text" value={name} onChange={(ev) => setName(ev.target.value)} className="input-field ml-3" />
+                    </div>
+
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Per Person</label>
+                        <input type="text" value={perPerson} onChange={(ev) => setPerPerson(ev.target.value)} className="input-field ml-3" />
+                    </div>
+
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Discription</label>
+                        <input type="text" value={detail} onChange={(ev) => setDetail(ev.target.value)} className="input-field ml-3" />
+                    </div>
+                    <div className="form-group mt-2">
+                        <label htmlFor="">SpentMoney</label>
+                        <input type="text" value={spentMoney} onChange={(ev) => setSpentMoney(ev.target.value)} className="input-field ml-3" />
+                    </div>
+                  
+
+                    <div className="form-group mt-2">
+                        <h5>Avaiable for</h5>
+
+                        <label htmlFor="">
+                            Delivery
+                            <input type="checkbox" value={avaiableFor.delivery} onChange={(ev) => setAvaiableFor(prev => ({ ...prev, delivery: ev.target.value }))}
+                                className="input-field ml-3" />
+                        </label>
+                        <label htmlFor="" className='ml-3'>
+                            Reservation
+                            <input type="checkbox" value={avaiableFor.Reservation} onChange={(ev) => setAvaiableFor(prev => ({ ...prev, Reservation: ev.target.value }))}
+                                className="input-field ml-3" />
+                        </label>
+
+                    </div>
+
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Start Date</label>
+                        <input type="date" value={startDate} onChange={(ev) => setStartDate(ev.target.value)} className="input-field ml-3" />
+                    </div>
+
+                    <div className="form-group mt-2">
+                        <label htmlFor="">End Date</label>
+                        <input type="date" value={endDate} onChange={(ev) => setEndDate(ev.target.value)} className="input-field ml-3" />
+                    </div>
+
+                    <div className="form-group mt-2">
+                        <h5>Days</h5>
+
+                        <label htmlFor="">
+                            all
+                            <input type="checkbox" value={days.all} onChange={(ev) => setDays(prev => ({ ...prev, all: ev.target.checked ? true : false }))}
+                                className="input-field ml-3" />
+                        </label>
+
+                        <label htmlFor="" className='ml-3'>
+                            sunday
+                            <input type="checkbox" value={avaiableFor.sunday} onChange={(ev) => setDays(prev => ({ ...prev, sunday: ev.target.checked ? true : false }))}
+                                className="input-field ml-3" />
+                        </label>
+
+                        <label htmlFor="" className='ml-3'>
+                            monday
+                            <input type="checkbox" value={avaiableFor.monday} onChange={(ev) => setDays(prev => ({ ...prev, monday: ev.target.checked ? true : false }))}
+                                className="input-field ml-3" />
+                        </label>
+
+                        <label htmlFor="" className='ml-3'>
+                            tuesday
+                            <input type="checkbox" value={avaiableFor.tuesday} onChange={(ev) => setDays(prev => ({ ...prev, tuesday: ev.target.checked ? true : false }))}
+                                className="input-field ml-3" />
+                        </label>
+
+                        <label htmlFor="" className='ml-3'>
+                            wednesday
+                            <input type="checkbox" value={avaiableFor.wednesday} onChange={(ev) => setDays(prev => ({ ...prev, wednesday: ev.target.checked ? true : false }))}
+                                className="input-field ml-3" />
+                        </label>
+
+                        <label htmlFor="" className='ml-3'>
+                            thursday
+                            <input type="checkbox" value={avaiableFor.thursday} onChange={(ev) => setDays(prev => ({ ...prev, thursday: ev.target.checked ? true : false }))}
+                                className="input-field ml-3" />
+                        </label>
+
+                        <label htmlFor="" className='ml-3'>
+                            friday
+                            <input type="checkbox" value={avaiableFor.friday} onChange={(ev) => setDays(prev => ({ ...prev, friday: ev.target.checked ? true : false }))}
+                                className="input-field ml-3" />
+                        </label>
+
+                        <label htmlFor="" className='ml-3'>
+                            saturday
+                            <input type="checkbox" value={avaiableFor.saturday} onChange={(ev) => setDays(prev => ({ ...prev, saturday: ev.target.checked ? true : false }))}
+                                className="input-field ml-3" />
+                        </label>
+
+
+                    </div>
+
+                    <div className="form-group mt-5">
+                        <button className="btn btn-outline-primary btn-p" onClick={createDraft}>Save Draft</button>
+                        <button className="btn  btn-primary btn-p ml-5 " onClick={createDiscount}>Create</button>
+                    </div>
+
+                    {newList.data && <div className='alert alert-primary'>Created</div>}
+                    {(loading) && <div className='alert alert-success'>Loading...</div>}
+                    {(error) && <div className='alert alert-danger'>Error</div>}
+
+                </div>
+            </div>
+        </div>
+    )
+}
+
