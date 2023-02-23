@@ -58,6 +58,7 @@ const Form1 = () => {
     const [endDate, setEndDate] = useState(Date.now());
     const [days, setDays] = useState({ all: false, sunday: false, monday: false, tuesday: false, wednesday: false, thursday: false, friday: false, saturday: false })
     const [threshold, setThreshold] = useState(0);
+    const [code, setCode] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -71,6 +72,7 @@ const Form1 = () => {
             { product: secondProduct.product, quantity: secondProduct.count },
         ]
         newObjct.threshold = threshold;
+        newObjct.code = code;
         newObjct.name = name;
         newObjct.repeat = perPerson;
         newObjct.available = avaiableFor;
@@ -92,6 +94,7 @@ const Form1 = () => {
                 setLoading(false);
                 setNewList(item);
                 console.log("Created Object,", item)
+                window.location = '/';
             })
             .catch(err => {
                 setError(true);
@@ -254,6 +257,10 @@ const Form1 = () => {
                         <input type="text" value={threshold} onChange={(ev) => setThreshold(ev.target.value)} className="input-field ml-3" />
                     </div>
                     <div className="form-group mt-2">
+                        <label htmlFor="">Code</label>
+                        <input type="text" value={code} onChange={(ev) => setCode(ev.target.value)} className="input-field ml-3" />
+                    </div>
+                    <div className="form-group mt-2">
                         <h5>Avaiable for</h5>
 
                         <label htmlFor="">
@@ -364,6 +371,7 @@ const Form2 = () => {
     const [startDate, setStartDate] = useState(Date.now());
     const [endDate, setEndDate] = useState(Date.now());
     const [days, setDays] = useState({ all: false, sunday: false, monday: false, tuesday: false, wednesday: false, thursday: false, friday: false, saturday: false })
+    const [code, setCode] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -378,6 +386,7 @@ const Form2 = () => {
         ]
         newObjct.freeProduct = [freeProduct];
         newObjct.name = name;
+        newObjct.code = code;
         newObjct.repeat = perPerson;
         newObjct.available = avaiableFor;
         newObjct.description = detail;
@@ -398,6 +407,7 @@ const Form2 = () => {
                 setLoading(false);
                 setNewList(item);
                 console.log("Created Object,", item)
+                window.location = '/';
             })
             .catch(err => {
                 setError(true);
@@ -561,6 +571,11 @@ const Form2 = () => {
                     </div>
 
                     <div className="form-group mt-2">
+                        <label htmlFor="">Code</label>
+                        <input type="text" value={code} onChange={(ev) => setCode(ev.target.value)} className="input-field ml-3" />
+                    </div>
+
+                    <div className="form-group mt-2">
                         <h5>Avaiable for</h5>
 
                         <label htmlFor="">
@@ -673,6 +688,7 @@ const Form3 = () => {
     const [endDate, setEndDate] = useState(Date.now());
     const [days, setDays] = useState({ all: false, sunday: false, monday: false, tuesday: false, wednesday: false, thursday: false, friday: false, saturday: false })
     const [threshold, setThreshold] = useState(0);
+    const [code, setCode] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -687,6 +703,7 @@ const Form3 = () => {
         // ]
         newObjct.freeProduct = [firstProduct.product.name];
         newObjct.name = name;
+        newObjct.code = code;
         newObjct.repeat = perPerson;
         newObjct.available = avaiableFor;
         newObjct.description = detail;
@@ -708,6 +725,7 @@ const Form3 = () => {
                 setLoading(false);
                 setNewList(item);
                 console.log("Created Object,", item)
+                window.location = '/';
             })
             .catch(err => {
                 setError(true);
@@ -795,6 +813,10 @@ const Form3 = () => {
                     <div className="form-group mt-2">
                         <label htmlFor="">Thershold</label>
                         <input type="text" value={threshold} onChange={(ev) => setThreshold(ev.target.value)} className="input-field ml-3" />
+                    </div>
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Code</label>
+                        <input type="text" value={code} onChange={(ev) => setCode(ev.target.value)} className="input-field ml-3" />
                     </div>
 
                     <div className="form-group mt-2">
@@ -912,6 +934,7 @@ const Form4 = () => {
     const [days, setDays] = useState({ all: false, sunday: false, monday: false, tuesday: false, wednesday: false, thursday: false, friday: false, saturday: false })
     const [threshold, setThreshold] = useState(0);
     const [fixedPrice, setFixedPrice] = useState(0);
+    const [code, setCode] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -926,6 +949,7 @@ const Form4 = () => {
         // ]
         // newObjct.freeProduct = [firstProduct.product.name];
         newObjct.name = name;
+        newObjct.code = code;
         newObjct.repeat = perPerson;
         newObjct.available = avaiableFor;
         newObjct.description = detail;
@@ -948,6 +972,7 @@ const Form4 = () => {
                 setLoading(false);
                 setNewList(item);
                 console.log("Created Object,", item)
+                window.location = '/'
             })
             .catch(err => {
                 setError(true);
@@ -991,6 +1016,10 @@ const Form4 = () => {
                     <div className="form-group mt-2">
                         <label htmlFor="">FixedPrice</label>
                         <input type="text" value={fixedPrice} onChange={(ev) => setFixedPrice(ev.target.value)} className="input-field ml-3" />
+                    </div>
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Code</label>
+                        <input type="text" value={code} onChange={(ev) => setCode(ev.target.value)} className="input-field ml-3" />
                     </div>
 
                     <div className="form-group mt-2">
@@ -1104,6 +1133,7 @@ const Form5 = () => {
     const [endDate, setEndDate] = useState(Date.now());
     const [days, setDays] = useState({ all: false, sunday: false, monday: false, tuesday: false, wednesday: false, thursday: false, friday: false, saturday: false })
     const [threshold, setThreshold] = useState(0);
+    const [code, setCode] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -1118,6 +1148,7 @@ const Form5 = () => {
         // ]
         newObjct.freeProduct = [firstProduct.product.name];
         newObjct.name = name;
+        newObjct.code = code;
         newObjct.repeat = perPerson;
         newObjct.available = avaiableFor;
         newObjct.description = detail;
@@ -1138,7 +1169,8 @@ const Form5 = () => {
                 if (item.status === 'fail') throw new Error(item.message);
                 setLoading(false);
                 setNewList(item);
-                console.log("Created Object,", item)
+                console.log("Created Object,", item);
+                window.location = '/'
             })
             .catch(err => {
                 setError(true);
@@ -1226,6 +1258,10 @@ const Form5 = () => {
                     <div className="form-group mt-2">
                         <label htmlFor="">Thershold</label>
                         <input type="text" value={threshold} onChange={(ev) => setThreshold(ev.target.value)} className="input-field ml-3" />
+                    </div>
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Code</label>
+                        <input type="text" value={code} onChange={(ev) => setCode(ev.target.value)} className="input-field ml-3" />
                     </div>
 
                     <div className="form-group mt-2">

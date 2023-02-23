@@ -356,6 +356,9 @@ const Home = () => {
                         return ('');
                     }
                 })}
+                {loading && <div className="spinner-border"></div>}
+                
+                {error && <h3>Eror occour Refresh page</h3>}
             </div>
         </div>
     )

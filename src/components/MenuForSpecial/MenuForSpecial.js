@@ -55,6 +55,7 @@ const Form5 = () => {
     // const [threshold, setThreshold] = useState(0);
     const [fixedPrice, setFixedPrice] = useState(0);
     const [occasion, setOccasion] = useState('');
+    const [code, setCode] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -69,6 +70,7 @@ const Form5 = () => {
         ]
         newObjct.occasion = occasion;
         newObjct.name = name;
+        newObjct.code = code;
         newObjct.repeat = perPerson;
         newObjct.available = avaiableFor;
         newObjct.description = detail;
@@ -89,7 +91,8 @@ const Form5 = () => {
                 if (item.status === 'fail') throw new Error(item.message);
                 setLoading(false);
                 setNewList(item);
-                console.log("Created Object,", item)
+                console.log("Created Object,", item);
+                window.location = '/';
             })
             .catch(err => {
                 setError(true);
@@ -181,6 +184,10 @@ const Form5 = () => {
                     <div className="form-group mt-2">
                         <label htmlFor="">Occasion</label>
                         <input type="text" value={occasion} onChange={(ev) => setOccasion(ev.target.value)} className="input-field ml-3" />
+                    </div>
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Code</label>
+                        <input type="text" value={code} onChange={(ev) => setCode(ev.target.value)} className="input-field ml-3" />
                     </div>
 
                     <div className="form-group mt-2">

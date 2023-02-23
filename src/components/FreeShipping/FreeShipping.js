@@ -56,6 +56,7 @@ const Form3 = () => {
     // const [threshold, setThreshold] = useState(0);
     // const [fixedPrice, setFixedPrice] = useState(0);
     const [spentMoney, setSpentMoney] = useState(0);
+    const [code, setCode] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -70,6 +71,7 @@ const Form3 = () => {
         // ]
         // newObjct.freeProduct = [firstProduct.product.name];
         newObjct.name = name;
+        newObjct.code = code;
         newObjct.repeat = perPerson;
         newObjct.available = avaiableFor;
         newObjct.description = detail;
@@ -90,7 +92,8 @@ const Form3 = () => {
                 if (item.status === 'fail') throw new Error(item.message);
                 setLoading(false);
                 setNewList(item);
-                console.log("Created Object,", item)
+                console.log("Created Object,", item);
+                window.location = '/';
             })
             .catch(err => {
                 setError(true);
@@ -130,6 +133,10 @@ const Form3 = () => {
                     <div className="form-group mt-2">
                         <label htmlFor="">SpentMoney</label>
                         <input type="text" value={spentMoney} onChange={(ev) => setSpentMoney(ev.target.value)} className="input-field ml-3" />
+                    </div>
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Code</label>
+                        <input type="text" value={code} onChange={(ev) => setCode(ev.target.value)} className="input-field ml-3" />
                     </div>
                   
 

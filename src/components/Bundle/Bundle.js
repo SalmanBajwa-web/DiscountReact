@@ -55,6 +55,7 @@ const Form1 = () => {
     const [startDate, setStartDate] = useState(Date.now());
     const [endDate, setEndDate] = useState(Date.now());
     const [days, setDays] = useState({ all: false, sunday: false, monday: false, tuesday: false, wednesday: false, thursday: false, friday: false, saturday: false })
+    const [code, setCode] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -69,6 +70,7 @@ const Form1 = () => {
         ]
         newObjct.freeProduct = [freeProduct];
         newObjct.name = name;
+        newObjct.code = code;
         newObjct.repeat = perPerson;
         newObjct.available = avaiableFor;
         newObjct.description = detail;
@@ -89,6 +91,7 @@ const Form1 = () => {
                 setLoading(false);
                 setNewList(item);
                 console.log("Created Object,", item)
+                window.location = '/';
             })
             .catch(err => {
                 setError(true);
@@ -250,6 +253,10 @@ const Form1 = () => {
                         <label htmlFor="">Discription</label>
                         <input type="text" value={detail} onChange={(ev) => setDetail(ev.target.value)} className="input-field ml-3" />
                     </div>
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Code</label>
+                        <input type="text" value={code} onChange={(ev) => setCode(ev.target.value)} className="input-field ml-3" />
+                    </div>
 
                     <div className="form-group mt-2">
                         <h5>Avaiable for</h5>
@@ -365,6 +372,7 @@ const Form2 = () => {
     const [endDate, setEndDate] = useState(Date.now());
     const [days, setDays] = useState({ all: false, sunday: false, monday: false, tuesday: false, wednesday: false, thursday: false, friday: false, saturday: false })
     const [threshold, setThreshold] = useState(0);
+    const [code, setCode] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -379,6 +387,7 @@ const Form2 = () => {
         ]
         newObjct.threshold = threshold;
         newObjct.name = name;
+        newObjct.code = code;
         newObjct.repeat = perPerson;
         newObjct.available = avaiableFor;
         newObjct.description = detail;
@@ -398,7 +407,8 @@ const Form2 = () => {
                 if (item.status === 'fail') throw new Error(item.message);
                 setLoading(false);
                 setNewList(item);
-                console.log("Created Object,", item)
+                console.log("Created Object,", item);
+                window.location = '/';
             })
             .catch(err => {
                 setError(true);
@@ -559,6 +569,10 @@ const Form2 = () => {
                     <div className="form-group mt-2">
                         <label htmlFor="">Thershold</label>
                         <input type="text" value={threshold} onChange={(ev) => setThreshold(ev.target.value)} className="input-field ml-3" />
+                    </div>
+                    <div className="form-group mt-2">
+                        <label htmlFor="">Code</label>
+                        <input type="text" value={code} onChange={(ev) => setCode(ev.target.value)} className="input-field ml-3" />
                     </div>
                     <div className="form-group mt-2">
                         <h5>Avaiable for</h5>
